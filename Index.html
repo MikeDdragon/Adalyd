@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adalyd</title>
+    <style>
+        body {
+            background: black;
+        }
+        
+.Logo{
+    height: auto;
+    width: 20%;        
+    position: absolute;
+    margin-top: -90px;
+    margin-left: 100px;
+    max-width: 100%;
+    transition: all 1s ease;
+}
+.Logo.selected-logo {
+    margin-top: 90px;
+}
+
+
+
+
+        .container {
+            position: fixed;    
+            overflow: hidden;
+            width: 1860px;
+            height: 1010px;
+            top: -50px;
+            z-index: -1;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            font-size: 20px;
+            gap: 15px;
+            color: rgb(235, 235, 235);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-left: 800px;
+            margin-top: 50px;
+            justify-content: center;   
+            z-index: 0; 
+        }
+
+        .nav li {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            padding: 10px 20px;
+            transition: background-color 0.5s ease, transform 0.5s ease, padding 0.5s ease;
+            cursor: pointer;
+        }
+
+        .nav li:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: all 50ms;
+        }
+
+        .nav li:hover {
+            background-color: lightgray;
+            color: black;
+            transform: scale(1.1);
+        }
+
+        .selected {
+            color: rgb(255, 255, 255);
+            transition: background-color 0.6s ease, transform 0.6s ease, top 0.6s ease, padding 0.6s ease;
+            top: 50px;
+            padding: 15px 25px;
+            transform: scale(1.1);
+        }
+
+        .ImagenGrupo {
+            opacity: 100%;
+            height: auto;
+            width: 99.5%;
+            display: block;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            mask-image: linear-gradient(black 80%, transparent);
+            max-width: 100%;
+            transition: opacity 1s ease;
+        }
+
+        .Dany, .Mike, .Baldo, .Edgar {
+            opacity: 0;
+            top: -80px;       
+            width: 100%;
+            justify-content: center;
+            position: absolute;
+            mask-image: linear-gradient(rgb(0, 0, 0) 80%, transparent);
+            object-fit: cover;    
+            filter: grayscale(100%); 
+            transition: opacity 1s ease, filter 0.3s ease, transform 0.3s ease; 
+        }
+
+        .RecDany, .RecMike, .RecBaldo, .RecEdgar {
+            background-color: rgba(255, 0, 0, 0);
+            width: 200px;
+            height: 500px;
+            position: absolute;
+            top: 400px;
+            z-index: 1;
+        }
+
+        .RecMike { left: 550px; }
+        .RecBaldo { left: 1000px; }
+        .RecEdgar { left: 1500px; }
+        .RecDany { left: 200px; }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class="nav">
+                <li class="Integrantes">INTEGRANTES</li>
+                <li class="Contenido">CONTENIDO</li>
+                <li class="Redes">REDES</li>
+                <li class="Eventos">EVENTOS</li>
+                <li class="Contacto">CONTACTO</li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <img class="Baldo" src="Assets/baldo.png" alt="Foto grupo integrantes">
+        <img class="Mike" src="Assets/mike.png" alt="Foto grupo integrantes">
+        <img class="Edgar" src="Assets/edgar.png" alt="Foto grupo integrantes">
+        <img class="Dany" src="Assets/dan.png" alt="Foto grupo integrantes">
+        <img class="ImagenGrupo" src="Assets/Grupo.png" alt="Foto grupo integrantes">
+        <img class="Logo" src="Assets/AdalydBlanco.png" alt="Foto grupo integrantes">
+        <div class="RecDany"></div>
+        <div class="RecMike"></div>
+        <div class="RecBaldo"></div>
+        <div class="RecEdgar"></div>
+    </div>
+
+    <script>
+        const recMike = document.querySelector('.RecMike');
+        const recBaldo = document.querySelector('.RecBaldo');
+        const recEdgar = document.querySelector('.RecEdgar');
+        const recDany = document.querySelector('.RecDany');
+
+        const MikeImage = document.querySelector('.Mike');
+        const BaldoImage = document.querySelector('.Baldo');
+        const DanyImage = document.querySelector('.Dany');
+        const EdgarImage = document.querySelector('.Edgar');
+        const GrupImage = document.querySelector(".ImagenGrupo");
+
+        const LogoGrup = document.querySelector(".Logo");
+
+        recDany.addEventListener('mouseenter', () => {
+            DanyImage.style.filter = 'grayscale(0%)'; 
+            DanyImage.style.transform = 'scale(1.02)';
+        });
+
+        recBaldo.addEventListener('mouseenter', () => {
+            BaldoImage.style.filter = 'grayscale(0%)'; 
+            BaldoImage.style.transform = 'scale(1.02)';
+        });
+
+        recMike.addEventListener('mouseenter', () => {
+            MikeImage.style.filter = 'grayscale(0%)'; 
+            MikeImage.style.transform = 'scale(1.02)';
+        });
+
+        recEdgar.addEventListener('mouseenter', () => {
+            EdgarImage.style.filter = 'grayscale(0%)'; 
+            EdgarImage.style.transform = 'scale(1.02)';
+        });
+
+        recEdgar.addEventListener('mouseleave', () => {
+            EdgarImage.style.filter = 'grayscale(100%)';
+            EdgarImage.style.transform = 'scale(1)';
+        });
+
+        recBaldo.addEventListener('mouseleave', () => {
+            BaldoImage.style.filter = 'grayscale(100%)';
+            BaldoImage.style.transform = 'scale(1)';
+        });
+
+        recMike.addEventListener('mouseleave', () => {
+            MikeImage.style.filter = 'grayscale(100%)';
+            MikeImage.style.transform = 'scale(1)';
+        });
+
+        recDany.addEventListener('mouseleave', () => {
+            DanyImage.style.filter = 'grayscale(100%)';
+            DanyImage.style.transform = 'scale(1)';
+        });
+
+        const navItems = document.querySelectorAll('.nav li');
+
+navItems.forEach(item => {
+    item.addEventListener('click', function() {
+        navItems.forEach(navItem => navItem.classList.remove('selected'));
+        this.classList.add('selected');
+
+        if (this.classList.contains('Integrantes')) {
+            // Mover el logo hacia abajo
+            LogoGrup.classList.add('selected-logo');
+
+            // Mostrar las imágenes de los integrantes
+            GrupImage.style.opacity = '0';
+            BaldoImage.style.opacity = '1';
+            MikeImage.style.opacity = '1';
+            DanyImage.style.opacity = '1';
+            EdgarImage.style.opacity = '1';
+        } else {
+            // Volver a la posición inicial del logo
+            LogoGrup.classList.remove('selected-logo');
+
+            // Mostrar la imagen de grupo
+            GrupImage.style.opacity = '100';
+            BaldoImage.style.opacity = '0';
+            MikeImage.style.opacity = '0';
+            DanyImage.style.opacity = '0';
+            EdgarImage.style.opacity = '0';
+        }
+            });
+        });
+    </script>
+
+</body>
+</html>
