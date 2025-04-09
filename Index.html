@@ -11,34 +11,32 @@
         
 .Logo{
     height: auto;
-    width: 20%;        
+    width: 50vh;        
     position: absolute;
-    margin-top: -90px;
+    margin-top: -50vh;
     margin-left: 100px;
     max-width: 100%;
     transition: all 1s ease;
 }
 .Logo.selected-logo {
-    margin-top: 90px;
+    margin-top: 2vh;
 }
 
-
-
-
-        .container {
+.container {
             position: fixed;    
             overflow: hidden;
-            width: 1860px;
-            height: 1010px;
-            top: -50px;
+            width: 100%;
+            height: 100vh;
+            margin-top: -10vh;
             z-index: -1;
+            background-size: cover;
         }
 
         .nav {
             display: flex;
             flex-direction: row;
             list-style: none;
-            font-size: 20px;
+            font-size: 1rem;
             gap: 15px;
             color: rgb(235, 235, 235);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -49,14 +47,10 @@
         }
 
         .nav li {
-            display: flex;
-            flex-direction: row;
-            position: relative;
             padding: 10px 20px;
-            transition: background-color 0.5s ease, transform 0.5s ease, padding 0.5s ease;
             cursor: pointer;
+            transition: background-color 0.5s ease, transform 0.5s ease, padding 0.5s ease;
         }
-
         .nav li:before {
             content: '';
             position: absolute;
@@ -76,18 +70,14 @@
 
         .selected {
             color: rgb(255, 255, 255);
-            transition: background-color 0.6s ease, transform 0.6s ease, top 0.6s ease, padding 0.6s ease;
-            top: 50px;
-            padding: 15px 25px;
             transform: scale(1.1);
+            z-index: 5;
         }
 
         .ImagenGrupo {
             opacity: 100%;
-            height: auto;
-            width: 99.5%;
+            width: 100%;
             display: block;
-            justify-content: center;
             position: absolute;
             top: 0;
             mask-image: linear-gradient(black 80%, transparent);
@@ -97,29 +87,160 @@
 
         .Dany, .Mike, .Baldo, .Edgar {
             opacity: 0;
-            top: -80px;       
+            top: -20vh;
             width: 100%;
             justify-content: center;
             position: absolute;
-            mask-image: linear-gradient(rgb(0, 0, 0) 80%, transparent);
+            mask-image: linear-gradient(rgb(0, 0, 0) 10%, transparent);
             object-fit: cover;    
             filter: grayscale(100%); 
             transition: opacity 1s ease, filter 0.3s ease, transform 0.3s ease; 
         }
 
         .RecDany, .RecMike, .RecBaldo, .RecEdgar {
-            background-color: rgba(255, 0, 0, 0);
-            width: 200px;
-            height: 500px;
-            position: absolute;
-            top: 400px;
-            z-index: 1;
-        }
+    background-color: rgba(255, 0, 0, 0);
+    width: 10vw; 
+    height: 80vh; 
+    position: fixed;
+    top: 40vh; 
+}
+        .RecMike {top:15vh; margin-left: 65vh; z-index: -1;}
+        .RecBaldo {top:15vh; margin-left: 115vh; z-index: -1;}
+        .RecEdgar {top:15vh; margin-left: 160vh; z-index: -1;}
+        .RecDany {top:15vh; left: 25vh; z-index: -1; }
 
-        .RecMike { left: 550px; }
-        .RecBaldo { left: 1000px; }
-        .RecEdgar { left: 1500px; }
-        .RecDany { left: 200px; }
+        .MikeText {
+            opacity: 100%;
+    color: white;
+    font-size: 2rem; 
+    z-index: 10; 
+    position: absolute;
+    top: 500vh; 
+    left: 73vh; 
+    transform: translateX(-10vh);
+    text-align: left;
+    transition: all 1s ease;
+}
+
+.BaldoText {
+            opacity: 100%;
+    color: white;
+    font-size: 2rem; 
+    z-index: 10; 
+    position: absolute;
+    top: 500vh; 
+    left: 130vh; 
+    transform: translateX(-10vh);
+    text-align: left;
+    transition: all 1s ease;
+}
+
+.DanyText {
+            opacity: 100%;
+    color: white;
+    font-size: 2rem; 
+    z-index: 10; 
+    position: absolute;
+    top: 500vh; 
+    left: 130vh; 
+    transform: translateX(-110vh);
+    text-align: left;
+    transition: all 1s ease;
+}
+
+.EdgarText {
+            opacity: 100%;
+    color: white;
+    font-size: 2rem; 
+    z-index: 10; 
+    position: absolute;
+    top: 500vh; 
+    left: 270vh; 
+    transform: translateX(-110vh);
+    transition: all 1s ease;
+    width: 30%;
+}
+
+.PMikeText {
+    opacity: 0%;
+    color: white;
+    font-size: 2rem; 
+    z-index: 10; 
+    position: absolute;
+    top: 80vh; 
+    left: 50%;
+    transform: translateX(-80%);
+    text-align: left; 
+    width: 150vh;
+    transition: all 1s ease;
+}
+
+.PBaldoText {
+    opacity: 0%;
+    color: white;
+    font-size: 2rem; 
+    z-index: 10; 
+    position: absolute;
+    top: 80vh; 
+    left: 50%;
+    transform: translateX(-80%);
+    text-align: left; 
+    width: 150vh;
+    transition: all 1s ease;
+}
+
+.PDanyText {
+    opacity: 0%;
+    color: white;
+    font-size: 2rem; 
+    z-index: 10; 
+    position: absolute;
+    top: 80vh; 
+    left: 30%;
+    transform: translateX(-80%);
+    text-align: left; 
+    width: 150vh;
+    transition: all 1s ease;
+}
+.PEdgarText {
+    opacity: 0%;
+    color: white;
+    font-size: 2rem; 
+    z-index: 10; 
+    position: absolute;
+    top: 80vh; 
+    left: 50%;
+    transform: translateX(-80%);
+    text-align: left; 
+    width: 150vh;
+    transition: all 1s ease;
+}
+
+@media (max-width: 1366px) {
+    .Logo{
+opacity: 0%;
+    }
+
+    .container{
+size: 50%;
+margin-top:10px;
+    }
+
+.nav{
+
+    margin-left: 40px;
+}
+
+.RecMike {height:50vh; top:10vh; margin-left: 35vh; z-index: -1;}
+        .RecBaldo {height:50vh;  top:10vh; margin-left: 60vh; z-index: -1;}
+        .RecEdgar {height:50vh; top:10vh; margin-left: 90vh; z-index: -1;}
+        .RecDany {height:50vh; top:10vh; left: 10vh; z-index: -1; }
+
+
+}
+
+
+
 
     </style>
 </head>
@@ -138,12 +259,31 @@
     </header>
     
     <div class="container">
-        <img class="Baldo" src="Assets/baldo.png" alt="Foto grupo integrantes">
-        <img class="Mike" src="Assets/mike.png" alt="Foto grupo integrantes">
-        <img class="Edgar" src="Assets/edgar.png" alt="Foto grupo integrantes">
-        <img class="Dany" src="Assets/dan.png" alt="Foto grupo integrantes">
+        <img class="Baldo" src="Assets/baldo.png" alt="Foto Baldo, el guitarrista">
+        <img class="Mike" src="Assets/mike.png" alt="Foto Mike, el baterista">
+        <img class="Edgar" src="Assets/edgar.png" alt="Foto Edgar, el cantante">
+        <img class="Dany" src="Assets/dan.png" alt="Foto Dany, el guitarrista">
         <img class="ImagenGrupo" src="Assets/Grupo.png" alt="Foto grupo integrantes">
-        <img class="Logo" src="Assets/AdalydBlanco.png" alt="Foto grupo integrantes">
+        <img class="Logo" src="Assets/AdalydBlanco.png" alt="Logo en Blanco">
+       
+        <h1 class="MikeText">MIGUEL GARCIA</h1>
+        <p  class="PMikeText">Baterista, coros, segunda voz, inspiraciones en Kamelot, Sonata Arctica, Avantasia, 
+            Beast in Black. Gusto culposo Escucha musica de juguetes chinos</p>
+
+            <h1 class="BaldoText">BALDO</h1>
+        <p  class="PBaldoText">Guitarrista, inspiraciones en Kamelot, Warcry, Avantasia, 
+            Sodom. Gusto culposo el Vocalista</p>
+
+            <h1 class="DanyText">DANIEL TAMAYO</h1>
+        <p  class="PDanyText">Guitarrista, compositor, inspiraciones en Children of Bodom, Stratovarius, Sonata Arctica.
+            Gusto culposo los dogos mañaneros</p>
+
+
+        <h1 class="EdgarText">EDGAR LOPEZ</h1>
+        <p  class="PEdgarText">Vocalista, autor, inspiraciones en Warcry, Stratovarius, Sonata Arctica, Mago de Oz.
+            Gusto culposo Monas chinas</p>
+
+
         <div class="RecDany"></div>
         <div class="RecMike"></div>
         <div class="RecBaldo"></div>
@@ -162,47 +302,133 @@
         const EdgarImage = document.querySelector('.Edgar');
         const GrupImage = document.querySelector(".ImagenGrupo");
 
+        const TextMike = document.querySelector(".MikeText");
+        const PMike = document.querySelector(".PMikeText");
+        const TextBaldo = document.querySelector(".BaldoText");
+        const PBaldo = document.querySelector(".PBaldoText");
+        const TextDany = document.querySelector(".DanyText");
+        const PDany = document.querySelector(".PDanyText");
+        const TextEdgar = document.querySelector(".EdgarText");
+        const PEdgar = document.querySelector(".PEdgarText");
+
         const LogoGrup = document.querySelector(".Logo");
 
         recDany.addEventListener('mouseenter', () => {
             DanyImage.style.filter = 'grayscale(0%)'; 
             DanyImage.style.transform = 'scale(1.02)';
+            TextDany.style.opacity = "100%";
+            TextDany.style.top = "75vh";
+            PDany.style.opacity = "100%";
+            PDany.style.transform = "translateX(-30%)";
         });
 
         recBaldo.addEventListener('mouseenter', () => {
             BaldoImage.style.filter = 'grayscale(0%)'; 
             BaldoImage.style.transform = 'scale(1.02)';
+            TextBaldo.style.opacity = "100%";
+            TextBaldo.style.top = "75vh";
+            PBaldo.style.opacity = "100%";
+            PBaldo.style.transform = "translateX(-30%)";
         });
 
         recMike.addEventListener('mouseenter', () => {
             MikeImage.style.filter = 'grayscale(0%)'; 
             MikeImage.style.transform = 'scale(1.02)';
+            TextMike.style.opacity = "100%";
+            TextMike.style.top = "75vh";
+            PMike.style.opacity = "100%";
+            PMike.style.transform = "translateX(-50%)";
         });
 
         recEdgar.addEventListener('mouseenter', () => {
             EdgarImage.style.filter = 'grayscale(0%)'; 
             EdgarImage.style.transform = 'scale(1.02)';
+            TextEdgar.style.opacity = "100%";
+            TextEdgar.style.top = "75vh";
+            PEdgar.style.opacity = "100%";
+            PEdgar.style.transform = "translateX(-50%)";
         });
+
+
+
+        recDany.addEventListener('click', () => {
+            DanyImage.style.filter = 'grayscale(0%)'; 
+            DanyImage.style.transform = 'scale(1.02)';
+            TextDany.style.opacity = "100%";
+            TextDany.style.top = "75vh";
+            PDany.style.opacity = "100%";
+            PDany.style.transform = "translateX(-30%)";
+        });
+
+        recBaldo.addEventListener('click', () => {
+            BaldoImage.style.filter = 'grayscale(0%)'; 
+            BaldoImage.style.transform = 'scale(1.02)';
+            TextBaldo.style.opacity = "100%";
+            TextBaldo.style.top = "75vh";
+            PBaldo.style.opacity = "100%";
+            PBaldo.style.transform = "translateX(-30%)";
+        });
+
+        recMike.addEventListener('click', () => {
+            MikeImage.style.filter = 'grayscale(0%)'; 
+            MikeImage.style.transform = 'scale(1.02)';
+            TextMike.style.opacity = "100%";
+            TextMike.style.top = "75vh";
+            PMike.style.opacity = "100%";
+            PMike.style.transform = "translateX(-50%)";
+        });
+
+        recEdgar.addEventListener('click', () => {
+            EdgarImage.style.filter = 'grayscale(0%)'; 
+            EdgarImage.style.transform = 'scale(1.02)';
+            TextEdgar.style.opacity = "100%";
+            TextEdgar.style.top = "75vh";
+            PEdgar.style.opacity = "100%";
+            PEdgar.style.transform = "translateX(-50%)";
+        });
+
+
+
+
+
 
         recEdgar.addEventListener('mouseleave', () => {
             EdgarImage.style.filter = 'grayscale(100%)';
             EdgarImage.style.transform = 'scale(1)';
+            TextEdgar.style.opacity = "0%";
+            TextEdgar.style.top = "100vh";
+            PEdgar.style.opacity = "0%";
+            PEdgar.style.transform = "translateX(-80%)";
         });
 
         recBaldo.addEventListener('mouseleave', () => {
             BaldoImage.style.filter = 'grayscale(100%)';
             BaldoImage.style.transform = 'scale(1)';
+            TextBaldo.style.opacity = "0%";
+            TextBaldo.style.top = "100vh";
+            PBaldo.style.opacity = "0%";
+            PBaldo.style.transform = "translateX(-80%)";
         });
 
         recMike.addEventListener('mouseleave', () => {
             MikeImage.style.filter = 'grayscale(100%)';
             MikeImage.style.transform = 'scale(1)';
+            TextMike.style.opacity = "0%";
+            TextMike.style.top = "100vh";
+            PMike.style.opacity = "0%";
+            PMike.style.transform = "translateX(-80%)";
         });
 
         recDany.addEventListener('mouseleave', () => {
             DanyImage.style.filter = 'grayscale(100%)';
             DanyImage.style.transform = 'scale(1)';
+            TextDany.style.opacity = "0%";
+            TextDany.style.top = "100vh";
+            PDany.style.opacity = "0%";
+            PDany.style.transform = "translateX(-80%)";
         });
+
+
 
         const navItems = document.querySelectorAll('.nav li');
 
@@ -212,20 +438,25 @@ navItems.forEach(item => {
         this.classList.add('selected');
 
         if (this.classList.contains('Integrantes')) {
-            // Mover el logo hacia abajo
+            recMike.style.zIndex = "1";
+            recBaldo.style.zIndex = "1";
+            recEdgar.style.zIndex = "1";
+            recDany.style.zIndex = "1";
             LogoGrup.classList.add('selected-logo');
 
-            // Mostrar las imágenes de los integrantes
             GrupImage.style.opacity = '0';
             BaldoImage.style.opacity = '1';
             MikeImage.style.opacity = '1';
             DanyImage.style.opacity = '1';
             EdgarImage.style.opacity = '1';
         } else {
-            // Volver a la posición inicial del logo
+            
             LogoGrup.classList.remove('selected-logo');
 
-            // Mostrar la imagen de grupo
+            recMike.style.zIndex = "-1";
+            recBaldo.style.zIndex = "-1";
+            recEdgar.style.zIndex = "-1";
+            recDany.style.zIndex = "-1";
             GrupImage.style.opacity = '100';
             BaldoImage.style.opacity = '0';
             MikeImage.style.opacity = '0';
