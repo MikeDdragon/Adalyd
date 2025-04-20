@@ -1,0 +1,146 @@
+body {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.Logo {
+    width: 30vh;
+    position: absolute;
+    margin-top: -50vh;
+    margin-left: 100px;
+    max-width: 100%;
+    transition: all 1s ease;
+}
+.Logo.selected-logo { margin-top: 2vh; }
+
+.container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.nav {
+    display: flex;
+    list-style: none;
+    font-size: 1rem;
+    gap: 15px;
+    color: #ebebeb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 35px auto 0 800px;
+    justify-content: center;
+    z-index: 0;
+}
+.nav li {
+    font-weight: 500;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.5s ease, transform 0.5s ease, padding 0.5s ease;
+}
+.nav li:hover {
+    background-color: lightgray;
+    color: black;
+    transform: scale(1.1);
+}
+.nav li:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transition: all 50ms;
+}
+.selected {
+    color: #fff;
+    transform: translateY(10px) scale(1.1);
+    z-index: 5;
+}
+
+.ImagenGrupo,
+.Baldo, .Mike, .Dany, .Edgar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    max-width: 100%;
+    display: block;
+    transition: opacity 1s ease;
+}
+.ImagenGrupo {
+    mask-image: linear-gradient(black 80%, transparent);
+}
+.Baldo, .Mike, .Dany, .Edgar {
+    top: -20vh;
+    filter: grayscale(100%);
+    object-fit: cover;
+    opacity: 0;
+    mask-image: linear-gradient(#000 10%, transparent);
+    transition: opacity 1s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+[class^="Rec"] {
+    background-color: rgba(255, 0, 0, 0);
+    width: 10vw;
+    height: 80vh;
+    position: fixed;
+    top: 40vh;
+    z-index: -1;
+}
+.RecDany { left: 25vh; }
+.RecMike { margin-left: 65vh; }
+.RecBaldo { margin-left: 115vh; }
+.RecEdgar { margin-left: 160vh; }
+
+.Fondo {
+    background-color: #000;
+    position: absolute;
+    inset: 0;
+    height: 100vh;
+    z-index: -2;
+    transition: top 1s ease;
+    box-shadow: 0 0 100px black;
+}
+
+[class$="Text"], [class^="P"] {
+    color: white;
+    font-size: 2rem;
+    z-index: 10;
+    position: absolute;
+    transition: all 1s ease;
+    text-align: left;
+}
+[class$="Text"] { top: 500vh; font-weight: bold; }
+[class^="P"] {
+    top: 80vh;
+    left: 50%;
+    opacity: 0%;
+    transform: translateX(-80%);
+    width: 150vh;
+}
+
+.MikeText { left: 73vh; transform: translateX(-10vh); }
+.BaldoText { left: 130vh; transform: translateX(-10vh); }
+.DanyText { left: 130vh; transform: translateX(-110vh); }
+.EdgarText { left: 270vh; transform: translateX(-110vh); width: 30%; }
+.PDanyText { left: 30%; }
+
+@media (max-width: 1366px) {
+    .Logo { opacity: 0; }
+    .container { size: 50%; margin-top: 10px; }
+    .nav { margin-left: 40px; }
+    .RecMike { height: 50vh; top: 10vh; margin-left: 35vh; }
+    .RecBaldo { height: 50vh; top: 10vh; margin-left: 60vh; }
+    .RecEdgar { height: 50vh; top: 10vh; margin-left: 90vh; }
+    .RecDany { height: 50vh; top: 10vh; left: 10vh; }
+}
+
+.flecha, .letraA {
+    position: absolute;
+    left: 330vh;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    transition: all 1s ease;
+    z-index: -3;
+}

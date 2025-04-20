@@ -4,249 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adalyd</title>
-    <style>
-        body {
-            background: black;
-        }
-        
-.Logo{
-    height: auto;
-    width: 50vh;        
-    position: absolute;
-    margin-top: -50vh;
-    margin-left: 100px;
-    max-width: 100%;
-    transition: all 1s ease;
-}
-.Logo.selected-logo {
-    margin-top: 2vh;
-}
-
-.container {
-            position: fixed;    
-            overflow: hidden;
-            width: 100%;
-            height: 100vh;
-            margin-top: -10vh;
-            z-index: -1;
-            background-size: cover;
-        }
-
-        .nav {
-            display: flex;
-            flex-direction: row;
-            list-style: none;
-            font-size: 1rem;
-            gap: 15px;
-            color: rgb(235, 235, 235);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin-left: 800px;
-            margin-top: 50px;
-            justify-content: center;   
-            z-index: 0; 
-        }
-
-        .nav li {
-            padding: 10px 20px;
-            cursor: pointer;
-            transition: background-color 0.5s ease, transform 0.5s ease, padding 0.5s ease;
-        }
-        .nav li:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: -1;
-            transition: all 50ms;
-        }
-
-        .nav li:hover {
-            background-color: lightgray;
-            color: black;
-            transform: scale(1.1);
-        }
-
-        .selected {
-            color: rgb(255, 255, 255);
-            transform: scale(1.1);
-            z-index: 5;
-        }
-
-        .ImagenGrupo {
-            opacity: 100%;
-            width: 100%;
-            display: block;
-            position: absolute;
-            top: 0;
-            mask-image: linear-gradient(black 80%, transparent);
-            max-width: 100%;
-            transition: opacity 1s ease;
-        }
-
-        .Dany, .Mike, .Baldo, .Edgar {
-            opacity: 0;
-            top: -20vh;
-            width: 100%;
-            justify-content: center;
-            position: absolute;
-            mask-image: linear-gradient(rgb(0, 0, 0) 10%, transparent);
-            object-fit: cover;    
-            filter: grayscale(100%); 
-            transition: opacity 1s ease, filter 0.3s ease, transform 0.3s ease; 
-        }
-
-        .RecDany, .RecMike, .RecBaldo, .RecEdgar {
-    background-color: rgba(255, 0, 0, 0);
-    width: 10vw; 
-    height: 80vh; 
-    position: fixed;
-    top: 40vh; 
-}
-        .RecMike {top:15vh; margin-left: 65vh; z-index: -1;}
-        .RecBaldo {top:15vh; margin-left: 115vh; z-index: -1;}
-        .RecEdgar {top:15vh; margin-left: 160vh; z-index: -1;}
-        .RecDany {top:15vh; left: 25vh; z-index: -1; }
-
-        .MikeText {
-            opacity: 100%;
-    color: white;
-    font-size: 2rem; 
-    z-index: 10; 
-    position: absolute;
-    top: 500vh; 
-    left: 73vh; 
-    transform: translateX(-10vh);
-    text-align: left;
-    transition: all 1s ease;
-}
-
-.BaldoText {
-            opacity: 100%;
-    color: white;
-    font-size: 2rem; 
-    z-index: 10; 
-    position: absolute;
-    top: 500vh; 
-    left: 130vh; 
-    transform: translateX(-10vh);
-    text-align: left;
-    transition: all 1s ease;
-}
-
-.DanyText {
-            opacity: 100%;
-    color: white;
-    font-size: 2rem; 
-    z-index: 10; 
-    position: absolute;
-    top: 500vh; 
-    left: 130vh; 
-    transform: translateX(-110vh);
-    text-align: left;
-    transition: all 1s ease;
-}
-
-.EdgarText {
-            opacity: 100%;
-    color: white;
-    font-size: 2rem; 
-    z-index: 10; 
-    position: absolute;
-    top: 500vh; 
-    left: 270vh; 
-    transform: translateX(-110vh);
-    transition: all 1s ease;
-    width: 30%;
-}
-
-.PMikeText {
-    opacity: 0%;
-    color: white;
-    font-size: 2rem; 
-    z-index: 10; 
-    position: absolute;
-    top: 80vh; 
-    left: 50%;
-    transform: translateX(-80%);
-    text-align: left; 
-    width: 150vh;
-    transition: all 1s ease;
-}
-
-.PBaldoText {
-    opacity: 0%;
-    color: white;
-    font-size: 2rem; 
-    z-index: 10; 
-    position: absolute;
-    top: 80vh; 
-    left: 50%;
-    transform: translateX(-80%);
-    text-align: left; 
-    width: 150vh;
-    transition: all 1s ease;
-}
-
-.PDanyText {
-    opacity: 0%;
-    color: white;
-    font-size: 2rem; 
-    z-index: 10; 
-    position: absolute;
-    top: 80vh; 
-    left: 30%;
-    transform: translateX(-80%);
-    text-align: left; 
-    width: 150vh;
-    transition: all 1s ease;
-}
-.PEdgarText {
-    opacity: 0%;
-    color: white;
-    font-size: 2rem; 
-    z-index: 10; 
-    position: absolute;
-    top: 80vh; 
-    left: 50%;
-    transform: translateX(-80%);
-    text-align: left; 
-    width: 150vh;
-    transition: all 1s ease;
-}
-
-@media (max-width: 1366px) {
-    .Logo{
-opacity: 0%;
-    }
-
-    .container{
-size: 50%;
-margin-top:10px;
-    }
-
-.nav{
-
-    margin-left: 40px;
-}
-
-.RecMike {height:50vh; top:10vh; margin-left: 35vh; z-index: -1;}
-        .RecBaldo {height:50vh;  top:10vh; margin-left: 60vh; z-index: -1;}
-        .RecEdgar {height:50vh; top:10vh; margin-left: 90vh; z-index: -1;}
-        .RecDany {height:50vh; top:10vh; left: 10vh; z-index: -1; }
-
-
-}
-
-
-
-
-    </style>
+    <link rel="stylesheet" href="Styles.css">
+    
+   
 </head>
 
 <body>
-    <header>
+    <header>  
         <nav>
             <ul class="nav">
                 <li class="Integrantes">INTEGRANTES</li>
@@ -259,13 +23,18 @@ margin-top:10px;
     </header>
     
     <div class="container">
+        
         <img class="Baldo" src="Assets/baldo.png" alt="Foto Baldo, el guitarrista">
         <img class="Mike" src="Assets/mike.png" alt="Foto Mike, el baterista">
         <img class="Edgar" src="Assets/edgar.png" alt="Foto Edgar, el cantante">
         <img class="Dany" src="Assets/dan.png" alt="Foto Dany, el guitarrista">
         <img class="ImagenGrupo" src="Assets/Grupo.png" alt="Foto grupo integrantes">
-        <img class="Logo" src="Assets/AdalydBlanco.png" alt="Logo en Blanco">
-       
+        <img class="Logo" src="Assets/Adalyd.png" alt="Logo en Blanco">
+        <img class="flecha" src="Assets/flecha.png" alt="Logo en Blanco">
+        <img class="letraA" src="Assets/Aflecha.png" alt="Logo en Blanco">
+        
+
+        
         <h1 class="MikeText">MIGUEL GARCIA</h1>
         <p  class="PMikeText">Baterista, coros, segunda voz, inspiraciones en Kamelot, Sonata Arctica, Avantasia, 
             Beast in Black. Gusto culposo Escucha musica de juguetes chinos</p>
@@ -283,189 +52,32 @@ margin-top:10px;
         <p  class="PEdgarText">Vocalista, autor, inspiraciones en Warcry, Stratovarius, Sonata Arctica, Mago de Oz.
             Gusto culposo Monas chinas</p>
 
+       
 
         <div class="RecDany"></div>
         <div class="RecMike"></div>
         <div class="RecBaldo"></div>
         <div class="RecEdgar"></div>
+
+        <div class="Fondo"></div>
+
+
+        <div class="Redes">
+        <img class="spotify" src="Assets/Aflecha.png" alt="Boton de Spotify">
+        <img class="intagram" src="Assets/Aflecha.png" alt="Boton de Instagram">
+        <img class="youtube" src="Assets/Aflecha.png" alt="Boton de Youtube">
+        <img class="tiktok" src="Assets/Aflecha.png" alt="Boton de Titktok">
+        </div>
+
+
+        <h1 class="SocialTitle">¡Sigue la llamada de la música épica!</h1>
+        <p  class="text1">Bienvenido al reino de Adalyd, donde el poder del metal resuena con fuerza y pasión.
+            Si sientes que la batalla apenas comienza… ¡acompáñanos en nuestras redes sociales y sé parte de esta cruzada musical!</p>
+
+            <p  class="text2">Tu apoyo en cada like, comentario y compartida es una espada más en nuestra lucha por mantener viva la llama del power metal.
+            </p>
     </div>
 
-    <script>
-        const recMike = document.querySelector('.RecMike');
-        const recBaldo = document.querySelector('.RecBaldo');
-        const recEdgar = document.querySelector('.RecEdgar');
-        const recDany = document.querySelector('.RecDany');
-
-        const MikeImage = document.querySelector('.Mike');
-        const BaldoImage = document.querySelector('.Baldo');
-        const DanyImage = document.querySelector('.Dany');
-        const EdgarImage = document.querySelector('.Edgar');
-        const GrupImage = document.querySelector(".ImagenGrupo");
-
-        const TextMike = document.querySelector(".MikeText");
-        const PMike = document.querySelector(".PMikeText");
-        const TextBaldo = document.querySelector(".BaldoText");
-        const PBaldo = document.querySelector(".PBaldoText");
-        const TextDany = document.querySelector(".DanyText");
-        const PDany = document.querySelector(".PDanyText");
-        const TextEdgar = document.querySelector(".EdgarText");
-        const PEdgar = document.querySelector(".PEdgarText");
-
-        const LogoGrup = document.querySelector(".Logo");
-
-        recDany.addEventListener('mouseenter', () => {
-            DanyImage.style.filter = 'grayscale(0%)'; 
-            DanyImage.style.transform = 'scale(1.02)';
-            TextDany.style.opacity = "100%";
-            TextDany.style.top = "75vh";
-            PDany.style.opacity = "100%";
-            PDany.style.transform = "translateX(-30%)";
-        });
-
-        recBaldo.addEventListener('mouseenter', () => {
-            BaldoImage.style.filter = 'grayscale(0%)'; 
-            BaldoImage.style.transform = 'scale(1.02)';
-            TextBaldo.style.opacity = "100%";
-            TextBaldo.style.top = "75vh";
-            PBaldo.style.opacity = "100%";
-            PBaldo.style.transform = "translateX(-30%)";
-        });
-
-        recMike.addEventListener('mouseenter', () => {
-            MikeImage.style.filter = 'grayscale(0%)'; 
-            MikeImage.style.transform = 'scale(1.02)';
-            TextMike.style.opacity = "100%";
-            TextMike.style.top = "75vh";
-            PMike.style.opacity = "100%";
-            PMike.style.transform = "translateX(-50%)";
-        });
-
-        recEdgar.addEventListener('mouseenter', () => {
-            EdgarImage.style.filter = 'grayscale(0%)'; 
-            EdgarImage.style.transform = 'scale(1.02)';
-            TextEdgar.style.opacity = "100%";
-            TextEdgar.style.top = "75vh";
-            PEdgar.style.opacity = "100%";
-            PEdgar.style.transform = "translateX(-50%)";
-        });
-
-
-
-        recDany.addEventListener('click', () => {
-            DanyImage.style.filter = 'grayscale(0%)'; 
-            DanyImage.style.transform = 'scale(1.02)';
-            TextDany.style.opacity = "100%";
-            TextDany.style.top = "75vh";
-            PDany.style.opacity = "100%";
-            PDany.style.transform = "translateX(-30%)";
-        });
-
-        recBaldo.addEventListener('click', () => {
-            BaldoImage.style.filter = 'grayscale(0%)'; 
-            BaldoImage.style.transform = 'scale(1.02)';
-            TextBaldo.style.opacity = "100%";
-            TextBaldo.style.top = "75vh";
-            PBaldo.style.opacity = "100%";
-            PBaldo.style.transform = "translateX(-30%)";
-        });
-
-        recMike.addEventListener('click', () => {
-            MikeImage.style.filter = 'grayscale(0%)'; 
-            MikeImage.style.transform = 'scale(1.02)';
-            TextMike.style.opacity = "100%";
-            TextMike.style.top = "75vh";
-            PMike.style.opacity = "100%";
-            PMike.style.transform = "translateX(-50%)";
-        });
-
-        recEdgar.addEventListener('click', () => {
-            EdgarImage.style.filter = 'grayscale(0%)'; 
-            EdgarImage.style.transform = 'scale(1.02)';
-            TextEdgar.style.opacity = "100%";
-            TextEdgar.style.top = "75vh";
-            PEdgar.style.opacity = "100%";
-            PEdgar.style.transform = "translateX(-50%)";
-        });
-
-
-
-
-
-
-        recEdgar.addEventListener('mouseleave', () => {
-            EdgarImage.style.filter = 'grayscale(100%)';
-            EdgarImage.style.transform = 'scale(1)';
-            TextEdgar.style.opacity = "0%";
-            TextEdgar.style.top = "100vh";
-            PEdgar.style.opacity = "0%";
-            PEdgar.style.transform = "translateX(-80%)";
-        });
-
-        recBaldo.addEventListener('mouseleave', () => {
-            BaldoImage.style.filter = 'grayscale(100%)';
-            BaldoImage.style.transform = 'scale(1)';
-            TextBaldo.style.opacity = "0%";
-            TextBaldo.style.top = "100vh";
-            PBaldo.style.opacity = "0%";
-            PBaldo.style.transform = "translateX(-80%)";
-        });
-
-        recMike.addEventListener('mouseleave', () => {
-            MikeImage.style.filter = 'grayscale(100%)';
-            MikeImage.style.transform = 'scale(1)';
-            TextMike.style.opacity = "0%";
-            TextMike.style.top = "100vh";
-            PMike.style.opacity = "0%";
-            PMike.style.transform = "translateX(-80%)";
-        });
-
-        recDany.addEventListener('mouseleave', () => {
-            DanyImage.style.filter = 'grayscale(100%)';
-            DanyImage.style.transform = 'scale(1)';
-            TextDany.style.opacity = "0%";
-            TextDany.style.top = "100vh";
-            PDany.style.opacity = "0%";
-            PDany.style.transform = "translateX(-80%)";
-        });
-
-
-
-        const navItems = document.querySelectorAll('.nav li');
-
-navItems.forEach(item => {
-    item.addEventListener('click', function() {
-        navItems.forEach(navItem => navItem.classList.remove('selected'));
-        this.classList.add('selected');
-
-        if (this.classList.contains('Integrantes')) {
-            recMike.style.zIndex = "1";
-            recBaldo.style.zIndex = "1";
-            recEdgar.style.zIndex = "1";
-            recDany.style.zIndex = "1";
-            LogoGrup.classList.add('selected-logo');
-
-            GrupImage.style.opacity = '0';
-            BaldoImage.style.opacity = '1';
-            MikeImage.style.opacity = '1';
-            DanyImage.style.opacity = '1';
-            EdgarImage.style.opacity = '1';
-        } else {
-            
-            LogoGrup.classList.remove('selected-logo');
-
-            recMike.style.zIndex = "-1";
-            recBaldo.style.zIndex = "-1";
-            recEdgar.style.zIndex = "-1";
-            recDany.style.zIndex = "-1";
-            GrupImage.style.opacity = '100';
-            BaldoImage.style.opacity = '0';
-            MikeImage.style.opacity = '0';
-            DanyImage.style.opacity = '0';
-            EdgarImage.style.opacity = '0';
-        }
-            });
-        });
-    </script>
-
+    <script src="Main.js"></script>
 </body>
 </html>
