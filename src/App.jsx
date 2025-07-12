@@ -7,6 +7,7 @@ import LogoHome from './components/LogoHome';
 import Background from './components/Background';
 import Integrante from './components/Integrante';
 import Content from './components/Content';
+import ContentMobile from './components-mobile/ContentMobile';
 import Redes from './components/Redes';
 import Tienda from './components/Tienda';
 import Eventos from './components/Eventos';
@@ -32,14 +33,10 @@ const App = () => {
 
   const handleMenuClick = (e, href) => {
     e.preventDefault();
-    if (activeMenu === href) {
-      setActiveMenu(null); // Close the current menu
-      window.location.hash = '';
-    } else {
-      setActiveMenu(href);
+    if (activeMenu !== href) {
+      setActiveMenu(href); 
       window.location.hash = href;
     }
-    console.log('Menu clicked:', href, 'activeMenu:', activeMenu);
   };
 
   React.useEffect(() => {
@@ -146,6 +143,12 @@ const App = () => {
         <div className={`content-container ${activeMenu === '#contenido' ? 'active' : ''}`}>
           {activeMenu === '#contenido' && <Content />}
         </div>
+
+<div className="content-mobile">
+        <ContentMobile />
+      </div>
+
+
         <div className={`redes-wrapper ${activeMenu === '#redes' ? 'active' : ''}`}>
           <div className="redes-container">
             <Redes logoA={logoA} />
