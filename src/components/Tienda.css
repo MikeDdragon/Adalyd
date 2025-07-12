@@ -2,13 +2,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: fill;
+  height: fill;
 }
 
 .carousel {
   position: relative;
-  width: 100%;
+  width: 200%;
   height: 100%;
   overflow: hidden;
 }

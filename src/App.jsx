@@ -32,8 +32,13 @@ const App = () => {
 
   const handleMenuClick = (e, href) => {
     e.preventDefault();
-    setActiveMenu(href);
-    window.location.hash = href;
+    if (activeMenu === href) {
+      setActiveMenu(null); // Close the current menu
+      window.location.hash = '';
+    } else {
+      setActiveMenu(href);
+      window.location.hash = href;
+    }
     console.log('Menu clicked:', href, 'activeMenu:', activeMenu);
   };
 
@@ -178,8 +183,9 @@ const App = () => {
             dateEvent="15 de Julio, 2025" 
             url="https://www.facebook.com/photo/?fbid=1145040257069568&set=a.544835173756749"
           />
-         
         </div>
+
+        
       <CursorEffect />
       </div>
     </div>
