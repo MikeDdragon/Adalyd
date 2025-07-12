@@ -1,0 +1,114 @@
+.redes-container {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  opacity: 1 !important;
+  transform: translateY(20px) !important;
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cube-container {
+  width: 90vh;
+  height: 90vh;
+  perspective: 1000px;
+  transform: translateY(-8rem)translateX(65rem) rotateZ(-45deg);
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  background: rgb(0, 0, 0);
+  position: relative;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+
+.cube-image {
+  width: auto;
+  height: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
+  margin-left: -15rem; 
+  rotate: 45deg;
+}
+
+
+.redes-wrapper {
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  width: 200vh;
+  height: 80%;
+  background: white;
+  transform: translateX(220vh);
+  transition: transform 1s ease;
+
+}
+
+.redes-wrapper.active {
+  transform: translateX(0);
+}
+
+.redes-title {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  font-size: 2rem;
+  text-transform: none;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  width: 100%;
+  transition: color 0.3s ease;
+  mix-blend-mode: exclusion;
+  background: rgb(255, 255, 255);
+  margin-top: -2rem;
+  left: -50%;
+}
+
+.redes-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 100px;
+  max-height: 100px;
+  filter:drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+
+.redes-grid {
+  display: grid;
+  position: absolute;
+  grid-template-columns: repeat(2, minmax(80px, 1fr));
+  justify-items: center;
+  transform: translateX(-30rem)
+  translateY(15rem);
+  gap: 2rem;
+  width: 35rem;
+  margin: 1rem auto;
+}
+
+.redes-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fill;
+  height: fill;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.redes-link:hover {
+  transform: translateY(-10px);
+}
+
+.redes-logo {
+  width: fill;
+  height: fill;
+  object-fit: contain;
+  max-width: 10vh;
+  max-height: 10vh;
+  margin-top: 2rem;
+}

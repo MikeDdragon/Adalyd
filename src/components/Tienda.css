@@ -1,0 +1,133 @@
+.tienda-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.control-btn {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: none;
+  font-size: 20px;
+  transition: background 0.3s ease;
+}
+
+.control-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.product-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: fill;
+  height: fill;
+  z-index: 0;
+}
+
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 60%;
+  width:cover;
+  height: fill;
+  z-index: -10;
+  object-fit: cover;
+}
+
+.product-info {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  color: white;
+  left: -20%;
+}
+
+.product-name {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.product-price {
+  font-size: 2rem;
+  color: antiquewhite;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.buy-btn {
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  cursor: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  z-index: 3;
+  position: relative;
+  overflow: hidden;
+}
+
+.buy-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(209, 68, 36, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+  pointer-events: none;
+}
+
+.buy-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.buy-btn:hover {
+  background: #d14424;
+  color: white;
+  box-shadow: 0 0 15px rgba(209, 68, 36, 0.5);
+}

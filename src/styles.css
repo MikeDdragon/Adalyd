@@ -1,0 +1,423 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  color: rgb(0, 0, 0);
+}
+
+.app {
+  min-height: 100vh;
+}
+
+
+.content-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: fill;
+  height: fill;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.5s ease;
+  pointer-events: none;
+  transform: translateY(300px);
+}
+
+.content-container.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.contacto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+
+.contacto.active {
+  pointer-events: auto;
+}
+
+.contacto-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+.contacto.active .contacto-background {
+  opacity: 1;
+}
+
+.contacto-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out 0.2s;
+}
+
+.contacto.active .contacto-content {
+  opacity: 1;
+  transform: translateY(20rem);
+}
+
+.contacto-content h1 {
+  font-size: 3rem;
+}
+
+.contacto-content p {
+  font-size: 1.5rem;
+}
+
+
+.spotify-player {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  z-index: 5;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+ margin-left: 30rem;
+}
+
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-color: black;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 1.5rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  
+}
+
+.logo-container.active {
+  transform: translateY(-100px);
+  opacity: 0;
+}
+
+.logo-container img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.logo-container img:hover {
+  filter: brightness(2);
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+ 
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.menu-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+}
+
+.menu-button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.menu-button:hover::before {
+  transform: scaleX(1);
+}
+
+.menu-button:hover {
+  
+  transform: translateY(2px);
+}
+
+.menu-button:active {
+  transform: translateY(0);
+}
+
+
+nav a:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+
+.tienda-wrapper {
+  position: absolute;
+  top: 8rem;
+  left: 0;
+  width: 200vh;
+  height: 80%;
+  background: rgb(0, 0, 0);
+  transform: translateX(220vh);
+  transition: transform 1s ease;
+}
+
+.tienda-wrapper.active {
+  transform: translateX(0);
+}
+
+.content-wrapper {
+  z-index: 2;
+}
+
+.content {
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  /* Component containers */
+  .content-container,
+  .redes-wrapper,
+  .tienda-wrapper,
+  .contacto,
+  .eventos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .content-container.active,
+  .redes-wrapper.active,
+  .tienda-wrapper.active,
+  .contacto.active,
+  .eventos.active {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Component content containers */
+  .content-content,
+  .redes-container,
+  .tienda-container,
+  .contacto-content,
+  .eventos-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+    position: relative;
+    z-index: 1000;
+  }
+
+  /* Typography */
+  .content-content h1,
+  .redes-container h2,
+  .tienda-container h2,
+  .contacto-content h1,
+  .eventos-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .content-content p,
+  .redes-container p,
+  .tienda-container p,
+  .contacto-content p,
+  .eventos-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: black;
+    overflow: hidden;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+  }
+
+  .logo {
+    margin-left: auto;
+    padding: 10px;
+  }
+
+  /* Component content */
+  .content-container .content-content,
+  .redes-wrapper .redes-container,
+  .tienda-wrapper .tienda-container,
+  .contacto .contacto-content,
+  .eventos .eventos-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+  }
+
+  /* Typography */
+  .content-container .content-content h1,
+  .redes-wrapper .redes-container h2,
+  .tienda-wrapper .tienda-container h2,
+  .contacto .contacto-content h1,
+  .eventos .eventos-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .content-container .content-content p,
+  .redes-wrapper .redes-container p,
+  .tienda-wrapper .tienda-container p,
+  .contacto .contacto-content p,
+  .eventos .eventos-container p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .content-container {
+    padding: 20px;
+  }
+
+  /* Component content */
+  .tienda-container,
+  .redes-container,
+  .eventos-container,
+  .contacto-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+  }
+
+  .tienda-container h2,
+  .redes-container h2,
+  .eventos-container h2,
+  .contacto-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .tienda-container p,
+  .redes-container p,
+  .eventos-container p,
+  .contacto-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+/* Additional styles */
+.content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}

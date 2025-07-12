@@ -1,0 +1,74 @@
+.integrantes-container {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    transform: translateY(10rem);
+    transition: all 0.8s ease-out;
+  }
+  
+  .integrantes-container.fade-out {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  
+  
+  .integrante-container img {
+    width: auto;
+    height: 700px;
+    object-fit:fill;
+    mask-image: linear-gradient(black 60%, transparent 80%);
+  }
+  
+  .integrante-container {
+    position: relative;
+    margin-right: -2rem;
+    margin-left: -6rem;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .integrante-container:hover {
+    transform: translateY(-10px);
+    filter: grayscale(0);
+  }
+  .integrante-container {
+    filter: grayscale(100%);
+    margin-top: 3rem;
+    scale: 1.2;
+  }
+  
+  .integrante-name {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    top: -10rem;
+  }
+  
+  .integrante-role {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    margin-top: -8rem;
+    transition: all 0.3s ease;
+    opacity: 0;
+  
+  }
+  
+  .integrante-container:hover .integrante-role {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  
+  .integrantes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }

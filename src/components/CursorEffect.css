@@ -1,0 +1,28 @@
+:root {
+  cursor: none !important;
+}
+
+.cursor-effect {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+.cursor-effect::before {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  transform: translate(var(--cursor-x), var(--cursor-y)) translate(-30px, -30px);
+  z-index: 1000;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+
