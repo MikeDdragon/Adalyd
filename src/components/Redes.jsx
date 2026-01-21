@@ -27,9 +27,6 @@ Estamos construyendo algo grande, y tú puedes ser parte de ello desde el inicio
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/1024px-YouTube_full-color_icon_%282017%29.svg.png" alt="YouTube" className="redes-logo" />
         </a>
       </div>
-       <div className="cube-container">
-        
-      </div>
     </div>
   );
 };

@@ -1,0 +1,378 @@
+/* YouTubeCarousel.css */
+/* Fullscreen Video Overlay */
+.fullscreen-video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.fullscreen-video-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  background: #ff0000;
+  transform: scale(1.1);
+}
+
+/* Prevent scrolling when video is open */
+body.video-open {
+  overflow: hidden;
+  height: 100vh;
+}
+
+
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  align-content: center;
+}
+
+.youtube-carousel-mobile {
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  padding: 1rem 0;
+  overflow: hidden;
+  touch-action: pan-y; /* Only allow vertical touch events */
+  overscroll-behavior-x: contain; /* Prevent scroll chaining */
+  -webkit-overflow-scrolling: touch;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  touch-action: pan-y; /* Only allow vertical touch events */
+  overscroll-behavior-x: contain; /* Prevent scroll chaining */
+}
+
+.carousel-button {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 10;
+  transition: all 0.3s ease;
+  padding: 0;
+  outline: none;
+}
+
+.carousel-button:hover,
+.carousel-button:focus {
+  background: rgba(255, 0, 0, 0.8);
+  transform: scale(1.1);
+}
+
+.carousel-button.prev {
+  left: 0.5rem;
+}
+
+.carousel-button.next {
+  right: 0.5rem;
+}
+
+.videos-wrapper {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  padding: 0.5rem calc(50% - 42.5%); /* Center the cards with 85% width */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-padding: 0 20px;
+  box-sizing: border-box;
+  overscroll-behavior-x: contain; /* Prevent scroll chaining */
+  touch-action: pan-y; /* Only allow vertical touch events */
+}
+
+/* Add padding at the end to prevent the last card from scrolling to the edge */
+.videos-wrapper::after {
+  content: '';
+  flex: 0 0 20px;
+  height: 1px;
+  background: transparent;
+}
+
+.videos-wrapper::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
+
+.video-card {
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+  margin: 0 0.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0.7;
+  transform: scale(0.95);
+  scroll-margin: 0 20px; /* Add margin to scroll snap points */
+}
+
+/* Special handling for first and last items */
+.video-card:first-child {
+  scroll-margin-left: calc(50% - 42.5%);
+}
+
+.video-card:last-child {
+  scroll-margin-right: calc(50% - 42.5%);
+}
+
+.video-card:active {
+  transform: scale(0.98);
+}
+
+.video-card.active {
+  border: 1px solid #ff0000;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+  opacity: 1;
+  transform: scale(1);
+}
+
+.video-thumbnail {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden;
+  background: #000;
+}
+
+.video-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.video-card.active .video-thumbnail img {
+  transform: scale(1.03);
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 0, 0, 0.8);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.video-card.active .play-icon {
+  background: #ff0000;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-info {
+  padding: 1rem;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 2;
+}
+
+.video-card.active .video-info {
+  transform: translateY(0);
+}
+
+.video-title {
+  font-size: 0.9rem;
+  margin: 0 0 0.25rem;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.video-date {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background-color: #ff0000;
+  transform: scale(1.2);
+}
+
+/* Responsive adjustments */
+@media (min-width: 480px) {
+  .video-card {
+    flex: 0 0 70%;
+  }
+  
+  .carousel-button {
+    width: 44px;
+    height: 44px;
+    font-size: 1.75rem;
+  }
+  
+}
+
+@media (min-width: 768px) {
+  .youtube-carousel-mobile {
+    max-width: 90%;
+  }
+  
+  .video-card {
+    flex: 0 0 50%;
+  }
+  
+  .carousel-button {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .video-title {
+    font-size: 1rem;
+  }
+  
+}
+
+@media (min-width: 1024px) {
+  .video-card {
+    flex: 0 0 33.333%;
+  }
+  
+  .video-info {
+    padding: 1.25rem;
+  }
+  
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .video-card:active {
+    transform: scale(0.98);
+  }
+  
+  .video-card.active:active {
+    transform: scale(0.98);
+  }
+}

@@ -7,7 +7,8 @@ import LogoHome from './components/LogoHome';
 import Background from './components/Background';
 import Integrante from './components/Integrante';
 import Content from './components/Content';
-import ContentMobile from './components-mobile/ContentMobile';
+import TeamMemberMobile from './components-mobile/TeamMemberMobile';
+import ContentMobile from './components-mobile/ContentMobile/contentMobilew';
 import Redes from './components/Redes';
 import Tienda from './components/Tienda';
 import Eventos from './components/Eventos';
@@ -141,19 +142,39 @@ const App = () => {
 
 
         <div className={`content-container ${activeMenu === '#contenido' ? 'active' : ''}`}>
-          {activeMenu === '#contenido' && <Content />}
+          {activeMenu === '#contenido' && (
+            <>
+              <div className="desktop-content">
+                <Content />
+              </div>  
+            </>
+          )}
         </div>
 
-<div className="content-mobile">
-        <ContentMobile />
-      </div>
 
+  <div className="mobile-content">
+                <ContentMobile />
+              </div>
+
+
+
+        <div className="team-members-section">
+          <TeamMemberMobile 
+            members={{
+              danImage,
+              mikeImage,
+              baldoImage,
+              edgarImage
+            }}
+          />
+        </div>
 
         <div className={`redes-wrapper ${activeMenu === '#redes' ? 'active' : ''}`}>
           <div className="redes-container">
             <Redes logoA={logoA} />
           </div>
-        </div>
+</div>
+        
         <div className={`tienda-wrapper ${activeMenu === '#tienda' ? 'active' : ''}`}>
           <div className="tienda-container">
             <Tienda />
@@ -188,7 +209,38 @@ const App = () => {
           />
         </div>
 
-        
+<div className="eventos-container-mobile">
+          <Eventos 
+            titleEvent="La nueva sangre del rock sonorense" 
+            locationEvent="La Gloriosa, Hermosillo Sonora" 
+            dateEvent="1 de Marzo, 2025" 
+            url="https://www.facebook.com/photo/?fbid=1220717616628969&set=a.527301735970564"
+          />
+          <Eventos 
+            titleEvent="FORO ROCK FEST 6" 
+            locationEvent="CLUB Obregon, Hermosillo Sonora" 
+            dateEvent="19 de Marzo, 2025" 
+            url="https://www.facebook.com/photo/?fbid=10226396161361587&set=a.1055777725906"
+          />
+          <Eventos 
+            titleEvent="SESIONES LA BOHEMIA" 
+            locationEvent="Comonfort #4 col. centenario, Hermosillo Sonora" 
+            dateEvent="15 de Julio, 2025" 
+            url="https://www.facebook.com/photo/?fbid=1145040257069568&set=a.544835173756749"
+          />
+        </div>
+
+        <div className="redes-container-mobile">
+            <Redes logoA={logoA} />
+          </div>
+
+<div className="tienda-container-mobile">
+            <Tienda />
+          </div>
+            
+        <div className="footer-mobile">
+          <h2>@Adalydpowermetal@gmail.com</h2>
+        </div>
       <CursorEffect />
       </div>
     </div>

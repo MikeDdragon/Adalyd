@@ -1,0 +1,187 @@
+.team-members-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.team-member-controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 10;
+}
+
+.nav-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.nav-button:hover {
+  background-color: #45a049;
+}
+
+.prev-button {
+  background-color: #f44336;
+}
+
+.prev-button:hover {
+  background-color: #da190b;
+}
+
+.next-button {
+  background-color: #4CAF50;
+}
+
+.next-button:hover {
+  background-color: #45a049;
+}
+
+.team-members-wrapper {
+  position: relative;
+  width: 100%;
+  height: 45vh;
+  touch-action: pan-y; /* Enable touch events for vertical scrolling if needed */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  overflow: hidden; /* Prevent scrolling but keep touch events */
+}
+
+.team-member-mobile {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  padding: 16px;
+  backface-visibility: hidden; /* Improve performance on mobile */
+  will-change: transform, opacity; /* Hint browser for better performance */
+}
+
+.team-member-mobile.active {
+  transform: scale(1.05);
+  z-index: 10;
+  transform: translateX(2rem);
+}
+
+.team-member-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-member-info {
+  position: relative;
+  padding: 16px;
+  color: #ffffff;
+  text-align: left;
+  border-radius: 8px;
+  max-width: 50%;
+  height: 70%;
+}
+
+.team-member-name {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.team-member-role {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Swipe hint animation */
+@keyframes swipeHint {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+.swipe-hint {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.7;
+  z-index: 5;
+  animation: swipeHint 1.5s infinite;
+}
+
+@media (max-width: 767px) {
+  
+
+  .team-member-mobile {
+    position: absolute;
+    width: cover;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    padding: 16px;
+  }
+
+  .team-member-info {
+    position: relative;
+    color: #ffffff;
+    text-align: left;
+    height: fill;
+    width: 30vh;
+    transform: translateX(0rem);
+    padding-top: 10vh;
+  }
+
+  .team-member-name {
+    font-weight: bold;
+    font-size: 1rem;
+    width: 50vh;
+    
+  }
+  
+  .team-member-role {
+    font-size: 1rem;
+    line-height: 1.4;
+    width: 80vh;
+    height: 80%;
+  }
+
+  .team-members-wrapper {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    
+  }
+  
+  .team-member-image {
+    width: 100%;
+    height: cover;
+    overflow: auto;
+  }
+
+  .team-members-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    width: cover;
+    height: cover;
+  }
+
+
+}
