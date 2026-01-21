@@ -95,8 +95,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: fill;
-  height: fill;
+  width: stretch;
+  height: stretch;
   display: flex;
   justify-content: center;
   align-items: center;

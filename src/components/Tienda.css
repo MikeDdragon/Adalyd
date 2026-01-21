@@ -2,8 +2,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: fill;
-  height: fill;
+  width: stretch;
+  height: stretch;
 }
 
 
@@ -55,8 +55,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: fill;
-  height: fill;
+  width: stretch;
+  height: stretch;
   z-index: 0;
 }
 
@@ -65,7 +65,7 @@
   top: 0;
   left: 60%;
   width:cover;
-  height: fill;
+  height: stretch;
   z-index: -10;
   object-fit: cover;
 }
@@ -135,8 +135,8 @@
 
 @media (max-width: 1199px) {
   .tienda-container {
-    width: fill;
-    height: fill;
+    width: stretch;
+    height: stretch;
   } 
 
   .carousel-controls {
@@ -151,7 +151,7 @@
   }
 
   .carousel {
-    width: fill;
+    width: stretch;
     overflow: hidden;
   }
 
@@ -174,8 +174,8 @@
 
   .product-card {
     position: relative;
-    width: fill;
-    height: fill;
+    width: stretch;
+    height: stretch;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -210,14 +210,14 @@
 @media (max-width: 767px) {
 
   .tienda-container {
-    width: fill;
+    width: stretch;
     height: cover;
   } 
 
   .carousel-controls {
     position: absolute;
     top: 50%;
-    width: fill;
+    width: stretch;
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
@@ -227,7 +227,7 @@
   }
 
   .carousel {
-    width: fill;
+    width: stretch;
     overflow: hidden;
     height: cover;
     overflow-y: hidden;
@@ -265,8 +265,8 @@
 
   .product-card {
     position: relative;
-    width: fill;
-    height: fill;
+    width: stretch;
+    height: stretch;
     display: flex;
     justify-content: center;
     align-items: center;

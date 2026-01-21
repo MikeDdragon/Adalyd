@@ -94,8 +94,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: fill;
-  height: fill;
+  width: stretch;
+  height: stretch;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
@@ -105,8 +105,8 @@
 }
 
 .redes-logo {
-  width: fill;
-  height: fill;
+  width: stretch;
+  height: stretch;
   object-fit: contain;
   max-width: 10vh;
   max-height: 10vh;
@@ -223,7 +223,7 @@
     }
 
     .redes-title {
-      width: fill;
+      width: stretch;
       height: auto;
   font-size: 1rem;
   align-content: top;
@@ -236,8 +236,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: fill;
-  height: fill;
+  width: stretch;
+  height: stretch;
   border-radius: 0%;
   transition: transform 0.3s ease;
 }

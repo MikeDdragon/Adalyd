@@ -141,7 +141,7 @@
     position: relative;
     color: #ffffff;
     text-align: left;
-    height: fill;
+    height: stretch;
     width: 30vh;
     transform: translateX(0rem);
     padding-top: 10vh;

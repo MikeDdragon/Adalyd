@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.15986a3f.css",
+    "main.js": "/static/js/main.875b6538.js",
+    "static/media/edgarShort.png": "/static/media/edgarShort.1a9959d39249ce5fb906.png",
+    "static/media/mikeShort.png": "/static/media/mikeShort.5cfb97757b96ec13f1b8.png",
+    "static/media/BaldoShort.png": "/static/media/BaldoShort.bf22b62bcfd921dd3978.png",
+    "static/media/danShort.png": "/static/media/danShort.47c6d1ebdccc4334b048.png",
+    "static/media/camisetasAdalyd.jpg": "/static/media/camisetasAdalyd.6eb14ffca6d42e3d011f.jpg",
+    "static/media/dan1.png": "/static/media/dan1.85886e43de319bcc48a5.png",
+    "static/media/grupo2.png": "/static/media/grupo2.27c786a6e5826087cfd9.png",
+    "static/media/Pua1.png": "/static/media/Pua1.fdb6c54e1adceea3aee4.png",
+    "static/media/Llaveros1.png": "/static/media/Llaveros1.251af3891d77a5c87142.png",
+    "static/media/adalyd.png": "/static/media/adalyd.b2ccb78891d127e3dfb0.png",
+    "static/media/edgar1.png": "/static/media/edgar1.8fcb65491db2e28d64a6.png",
+    "static/media/mike1.png": "/static/media/mike1.dfc9c7f9a7c2bcd83b7f.png",
+    "static/media/bald1.png": "/static/media/bald1.bbfc095a1fe894d710f1.png",
+    "static/media/Aloogo.png": "/static/media/Aloogo.c97e9f03d5854458c2d6.png",
+    "index.html": "/index.html",
+    "main.15986a3f.css.map": "/static/css/main.15986a3f.css.map",
+    "main.875b6538.js.map": "/static/js/main.875b6538.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.15986a3f.css",
+    "static/js/main.875b6538.js"
+  ]
+}
