@@ -53,7 +53,9 @@ body {
 
 
 .desktop-content {
-  display: block; /* Shown by default, hidden on mobile */
+  display: block;
+  width: 100%;
+   /* Shown by default, hidden on mobile */
 }
 
 .mobile-content {
@@ -173,15 +175,14 @@ body {
 
 
 .spotify-player {
-  width: 100%;
+  
   background: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   z-index: 5;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 5rem;
- margin-left: 30rem;
+  height: 50svh;
+  display: relative;
+  margin-top: 50svh;
+ 
 }
 
 
@@ -306,11 +307,11 @@ nav a:hover {
 
 
 .tienda-wrapper {
-  position: absolute;
+  position: fixed;
   top: 8rem;
   left: 0;
-  width: 200vh;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   background: rgb(0, 0, 0);
   transform: translateX(220vh);
   transition: transform 1s ease;
@@ -324,6 +325,52 @@ nav a:hover {
 /* Base styles for all screens */
 .content-wrapper {
   z-index: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* YouTube videos on left */
+.content-wrapper .youtube-carousel {
+  flex: 0 0 auto;
+  width: 60%;
+  margin: 0;
+}
+
+/* Spotify player on right */
+.content-wrapper .spotify-player {
+  flex: 1;
+  margin: 0;
+  max-width: 500px;
+}
+
+/* Responsive adjustments for content */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    max-width: 100%;
+  }
+  
+  .content-wrapper .youtube-carousel {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 0.5rem;
+  }
+  
+  .spotify-player {
+    margin: 1rem 0 0;
+    padding: 0 0.5rem;
+  }
 }
 
 .content {
@@ -341,7 +388,6 @@ nav a:hover {
   .contacto-content,
   .eventos-container {
     width: 100%;
-    max-width: 1000px;
     margin: 0 auto;
     padding: 40px;
     color: white;
