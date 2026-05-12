@@ -190,43 +190,43 @@ const App = () => {
         </div>
         <div className={`eventos ${activeMenu === '#eventos' ? 'active' : ''}`}>
           <Eventos 
-            titleEvent="La nueva sangre del rock sonorense" 
-            locationEvent="La Gloriosa, Hermosillo Sonora" 
-            dateEvent="1 de Marzo, 2025" 
-            url="https://www.facebook.com/photo/?fbid=1220717616628969&set=a.527301735970564"
+            titleEvent="Tributo a Tierra Santa" 
+            locationEvent="Geronimos Bar, Hermosillo Sonora" 
+            dateEvent="25 de Abril, 2026" 
+            url="https://www.facebook.com/photo/?fbid=10163068674923842"
           />
           <Eventos 
-            titleEvent="FORO ROCK FEST 6" 
-            locationEvent="CLUB Obregon, Hermosillo Sonora" 
-            dateEvent="19 de Marzo, 2025" 
-            url="https://www.facebook.com/photo/?fbid=10226396161361587&set=a.1055777725906"
+            titleEvent="CEMICAN" 
+            locationEvent="Geronimos Bar, Hermosillo Sonora" 
+            dateEvent="20 de Junio, 2026" 
+            url="https://www.facebook.com/photo?fbid=122231199662271806"
           />
           <Eventos 
-            titleEvent="SESIONES LA BOHEMIA" 
-            locationEvent="Comonfort #4 col. centenario, Hermosillo Sonora" 
-            dateEvent="15 de Julio, 2025" 
-            url="https://www.facebook.com/photo/?fbid=1145040257069568&set=a.544835173756749"
+            titleEvent="Fiestas del Pitic" 
+            locationEvent="Foro Marsella, Hermosillo Sonora" 
+            dateEvent="22 de Mayo, 2026" 
+            url="https://www.facebook.com/photo/?fbid=1515759566779677"
           />
         </div>
 
 <div className="eventos-container-mobile">
           <Eventos 
-            titleEvent="La nueva sangre del rock sonorense" 
-            locationEvent="La Gloriosa, Hermosillo Sonora" 
-            dateEvent="1 de Marzo, 2025" 
-            url="https://www.facebook.com/photo/?fbid=1220717616628969&set=a.527301735970564"
+           titleEvent="Tributo a Tierra Santa" 
+            locationEvent="Geronimos Bar, Hermosillo Sonora" 
+            dateEvent="25 de Abril, 2026" 
+            url="https://www.facebook.com/photo/?fbid=10163068674923842"
           />
           <Eventos 
-            titleEvent="FORO ROCK FEST 6" 
-            locationEvent="CLUB Obregon, Hermosillo Sonora" 
-            dateEvent="19 de Marzo, 2025" 
-            url="https://www.facebook.com/photo/?fbid=10226396161361587&set=a.1055777725906"
+             titleEvent="CEMICAN" 
+            locationEvent="Geronimos Bar, Hermosillo Sonora" 
+            dateEvent="20 de Junio, 2026" 
+            url="https://www.facebook.com/photo?fbid=122231199662271806"
           />
           <Eventos 
-            titleEvent="SESIONES LA BOHEMIA" 
-            locationEvent="Comonfort #4 col. centenario, Hermosillo Sonora" 
-            dateEvent="15 de Julio, 2025" 
-            url="https://www.facebook.com/photo/?fbid=1145040257069568&set=a.544835173756749"
+            titleEvent="Fiestas del Pitic" 
+            locationEvent="Foro Marsella, Hermosillo Sonora" 
+            dateEvent="22 de Mayo, 2026" 
+            url="https://www.facebook.com/photo/?fbid=1515759566779677"
           />
         </div>
 

@@ -15,7 +15,7 @@ const Content = () => {
         <div className="content-wrapper">
           <div className="spotify-player">
             <iframe 
-              src="https://open.spotify.com/embed/album/75z9XpPOorJX2R3dvpwvhi?utm_source=generator" 
+              src="https://open.spotify.com/embed/album/5CxUrSI3hlmdMVGZZCtDyZ?utm_source=generator" 
               width="100%" 
               height="600" 
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
