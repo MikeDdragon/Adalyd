@@ -25,7 +25,7 @@ const ContentMobile = () => {
         <iframe 
           src="https://open.spotify.com/embed/album/5CxUrSI3hlmdMVGZZCtDyZ?utm_source=generator" 
           width="100%" 
-          height="380" 
+          height="400px"
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
           loading="lazy"
           title="Spotify Album Player"
@@ -43,9 +43,11 @@ const ContentMobile = () => {
       <div className="youtube-section-mobile">
         <YouTubeCarousel 
           channelId="UC0Srsl_aIu6QDr6NKwBji_Q" 
+          
           maxResults={5}
         />
       </div>
+      
     </div>
   );
 };

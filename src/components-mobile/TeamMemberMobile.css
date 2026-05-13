@@ -1,9 +1,8 @@
 .team-members-container {
-  display: flex;
+  display: relative;
   flex-direction: column;
   gap: 16px;
   position: relative;
-  width: 100%;
   scrollbar-width: none;
 }
 
@@ -46,7 +45,7 @@
 }
 
 .team-members-wrapper {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 45vh;
   touch-action: pan-y; /* Enable touch events for vertical scrolling if needed */
@@ -55,7 +54,7 @@
 }
 
 .team-member-mobile {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   display: flex;
@@ -125,8 +124,8 @@
   
 
   .team-member-mobile {
-    position: absolute;
-    width: cover;
+    position: relative;
+    width: 100%;
     height: 70%;
     display: flex;
     align-items: center;
@@ -163,24 +162,24 @@
 
   .team-members-wrapper {
     position: relative;
-    width: 100%;
-    height: 80vh;
-    
+  width: 100%;
+  height: 80vh; 
+  display: block;   /* Asegúrate de que no sea flex para esta prueba */
+  overflow: hidden; /* Esto evita que los hijos se salgan del cuadro si se mueven */
+  background-color: transparent; /* Solo para asegurar que no hay nada tapando */
   }
   
   .team-member-image {
     width: 100%;
-    height: cover;
+    height: auto;
     overflow: auto;
   }
 
   .team-members-container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
     position: relative;
-    width: cover;
-    height: cover;
+    gap: 16px;
+    width: 100%;
+    height: auto;
   }
 
 
