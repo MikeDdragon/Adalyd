@@ -107,6 +107,7 @@ body.video-open {
   touch-action: pan-y; /* Only allow vertical touch events */
   overscroll-behavior-x: contain; /* Prevent scroll chaining */
   -webkit-overflow-scrolling: touch;
+  scale: 1.2;
 }
 
 .carousel-container {

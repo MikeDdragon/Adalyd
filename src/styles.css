@@ -329,9 +329,9 @@ nav a:hover {
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
-  margin-top: 20rem;
+  margin-top: 1rem;
 }
 
 /* YouTube videos on left */
@@ -345,7 +345,7 @@ nav a:hover {
 .content-wrapper .spotify-player {
   flex: 1;
   margin: 0;
-  max-width: 500px;
+  
 }
 
 /* Responsive adjustments for content */
@@ -353,19 +353,18 @@ nav a:hover {
   .content-wrapper {
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
+    
     max-width: 100%;
   }
   
   .content-wrapper .youtube-carousel {
     width: 100%;
-    max-width: 600px;
   }
 }
 
 @media (max-width: 768px) {
   .content-wrapper {
-    padding: 0.5rem;
+   width: 100%;
   }
   
   .spotify-player {
@@ -389,8 +388,8 @@ nav a:hover {
   .contacto-content,
   .eventos-container {
     width: 100%;
-    margin: 0 auto;
-    padding: 40px;
+    
+    gap: 2rem;
     color: white;
   }
 
@@ -414,6 +413,7 @@ nav a:hover {
     font-size: 1.2rem;
     line-height: 1.8;
   }
+
   
 
   .background {
@@ -445,7 +445,6 @@ nav a:hover {
   .team-members-section {
     margin-top: 40px;
     background-color: #000000dc;
-    border-radius: 12px;
  display: none;
   }
   .eventos-container-mobile {
@@ -471,13 +470,7 @@ nav a:hover {
     position: relative;
   }
 
-  .redes-container-mobile{
-height: 60vh;
-margin-top: 2vh;
-background-color: white;
-width: 100%;
-overflow: hidden;
-  }
+ 
 
 .tienda-container-mobile{
 width: 100%;
@@ -634,7 +627,9 @@ header {
 scale: 0.8;
 }
 
-
+ .redes-title {
+    padding: 10px;
+  }
 
 }
 
@@ -647,15 +642,16 @@ scale: 0.8;
     overflow-y: auto;
     height: auto;
     position: relative;
+    width: 100%;
   }
 
   .redes-container-mobile{
-height: 65vh;
-margin-top: 2vh;
-background-color: white;
-width: 100%;
+   width: 100%; 
+    box-sizing: border-box;
+    height: 60vh;
+    background-color: white;
+    overflow: hidden;
   }
-
 
 
 .tienda-container-mobile{
@@ -694,6 +690,7 @@ display: flex;
     opacity: 1;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+
   }
 
   /* Content containers */
@@ -797,8 +794,6 @@ header {
 .team-members-section {
   position:relative; 
   background-color: #000000dc;
-  
- 
 }
 
 .integrantes-container {
@@ -806,9 +801,9 @@ header {
 }
 
 .eventos-container-mobile {
-  margin-top: 15vh;
 scale: 0.8;
 }
+
 
 
 

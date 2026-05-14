@@ -42,11 +42,14 @@
 
 .youtube-section-mobile {
   width: 100%;
+  overflow: auto;
 }
 
 /* Responsive adjustments */
 @media (min-width: 768px) {
  
+  
+
   
   .spotify-player-mobile h2,
   .youtube-section-mobile h2 {
@@ -54,6 +57,7 @@
     margin-bottom: 1.5rem;
   }
   
+ 
  
 }
 
