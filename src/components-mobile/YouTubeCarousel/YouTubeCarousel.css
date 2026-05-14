@@ -119,6 +119,7 @@ body.video-open {
   margin: 0 auto;
   touch-action: pan-y; /* Only allow vertical touch events */
   overscroll-behavior-x: contain; /* Prevent scroll chaining */
+  overflow: hidden;
 }
 
 .carousel-button {
@@ -338,7 +339,7 @@ body.video-open {
 
 @media (min-width: 768px) {
   .youtube-carousel-mobile {
-    max-width: 90%;
+    max-width: 100%;
   }
   
   .video-card {
